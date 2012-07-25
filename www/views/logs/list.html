@@ -1,0 +1,15 @@
+<ul data-role="listview" data-theme="c" data-filter="true">
+  {{#data}}
+    {{#logs}}
+      <li>
+	      <img src="{{imageUrl}}"/><br>
+	      {{#_user}}
+	        {{#name}}
+	          {{first}} {{last}}
+	        {{/name}}
+	      {{/_user}}
+	      at {{created}}
+      </li>
+    {{/logs}}
+  {{/data}}
+</ul>

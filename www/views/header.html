@@ -1,0 +1,16 @@
+{{#data}}
+<div data-role="header" data-theme="b">
+  {{#backUrl}}
+  <a href="{{backUrl}}" data-role="button" data-iconpos="left" data-icon="arrow-l" >Back</a>
+  {{/backUrl}}
+  
+  <h1>{{#title}}{{title}}{{/title}}</h1>
+  <a class="ui-btn-right" data-role="button" href="http://app.simplecrew.com/logout?type=mobile">Logout</a>
+</div>
+<div data-role="content">
+  {{#warning}}<div class="alert">{{warning}}</div>{{/warning}}
+  {{#error}}<div class="alert alert-error">{{error}}</div>{{/error}}
+  {{#success}}<div class="alert alert-success">{{success}}</div>{{/success}}
+  {{#info}}<div class="alert alert-info">{{info}}</div>{{/info}}
+
+  {{/data}}

@@ -1,0 +1,10 @@
+<ul data-role="listview" data-inset="true" data-theme="c" data-divider-theme="a">
+  <li data-role="list-divider">Campaigns</li>
+  {{#.}}
+    <li>
+      <a href="#campaign?campaignId={{_id}}&companyId={{_company}}">
+        <h3 class="ui-li-heading">{{role}} {{name}}</h3><span class="ui-li-count">{{log_count}}</span></a>
+      </a>
+    </li>
+  {{/.}}
+</ul> 

@@ -1,0 +1,13 @@
+<ul data-role="listview" data-inset="true" data-theme="c" data-divider-theme="a">
+  <li data-role="list-divider">Companies</li>
+  {{#.}}
+    <li>
+      <a href="#company?companyId={{_id}}">
+        <h3 class="ui-li-heading">{{name}}</h3>
+      </a>
+    </li>
+  {{/.}}
+  {{^.}}
+  <li class="light-text">No companies available.</li>
+  {{/.}}
+</ul>

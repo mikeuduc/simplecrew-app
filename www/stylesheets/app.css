@@ -1,0 +1,28 @@
+.hide { 
+	display: none;
+	visibility: hidden;
+}
+#missions, #logs, #add-edit-mission, #add-edit-log { 
+	margin-bottom: 15px; 
+}
+
+#new-mission, #new-log {
+	margin-bottom: 10px; 
+}
+
+#target-map, #view-map {
+	width: 600px;
+	height: 400px;
+}
+
+#target-map img, #view-map img {
+    max-width: none;
+}
+
+.map-thumb {
+	height:90px;
+}
+
+.log-thumb{
+	height:200px;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+    <title>SimpleCrew - Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+      <script type="text/javascript" charset="utf-8" src="javascripts/cordova-2.0.0.js"></script>
+      <link rel="stylesheet" href="stylesheets/jquery.mobile-1.1.1.min.css" />
+      <!--<link rel="stylesheet" href="stylesheets/jquery.mobile.iscroll.css"/>
+      <link rel="stylesheet" href="stylesheets/jquery.mobile.iscroll-pull.css"/>-->
+      <link rel="stylesheet" href="stylesheets/style.css" />
+      <script src="javascripts/mobile.globals.js"></script>
+      <script type="text/javascript" src="javascripts/underscore.js"></script>
+      <script src="javascripts/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="javascripts/jqm.page.params.js"></script>
+      <script src="javascripts/jquery.lazyload.js"></script>
+      <script src="javascripts/jqm.url.js"></script>
+      <script src="javascripts/jquery.tache.js"></script>
+      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCEAkSWVLBwDO2JkJmBXncaMDtGgWxXvtU&amp;sensor=true"></script>
+      <script type="text/javascript" src="javascripts/plotter.js"></script>
+      <script type="text/javascript" src="javascripts/app/app.js"></script>
+      <script type="text/javascript" src="javascripts/app/Models.js"></script>
+      <script type="text/javascript" src="javascripts/app/Controller.js"></script>
+      <script type="text/javascript" src="javascripts/script.js"></script>
+      <script type="text/javascript" src="javascripts/iscroll.js"></script>
+      <script src="javascripts/jquery.mobile-1.1.1.min.js"></script>
+      <!--<script src="javascripts/iscroll.js"></script>
+      <script src="javascripts/jquery.mobile.iscrollview.js"></script>-->
+
+      <script src="javascripts/mustache.js"></script>
+  </head> 
+  <body onload="onBodyLoad()" >
+    <div data-role="page" id="home" >
+      <div data-role="header" data-position="fixed" data-theme="a" >
+        <h1>SimpleCrew</h1>
+      </div><!-- /header -->
+      <div data-role="content" class="content">
+      <form id='loginForm' data-ajax='false'>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" value="">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" value="">
+          <input type="submit" value="Submit">
+        </form> 
+      </div><!-- /content -->
+      
+    </div><!-- /page -->
+    
+    <div data-role="page" id="companies">
+      <div data-role="header" data-position="fixed" data-theme="a" >
+        <h1>SimpleCrew</h1>
+        <a class="ui-btn-right" data-icon="gear" data-role="button" href="#menu">Menu</a>
+      </div><!-- /header -->
+      <div data-role="content" class="content">
+      </div>
+      <!--
+      <div data-role="content" data-iscroll>
+        <div class="iscroll-pulldown">
+          <span class="iscroll-pull-icon"></span>
+          <span class="iscroll-pull-label"></span>
+        </div> 
+        <div class="content">
+        </div>
+      </div>
+       -->
+    </div><!-- /page -->
+    
+    <div data-role="page" id="company" >
+      <div data-role="header" data-position="fixed" data-theme="a" >
+        <a data-rel="back" data-role="button" data-iconpos="left" data-icon="arrow-l" >Back</a>
+        <h1>SimpleCrew</h1>
+        <a class="ui-btn-right" data-icon="gear" data-role="button" href="#menu">Menu</a>
+      </div><!-- /header -->
+      <div data-role="content" class="content">
+      </div>
+      <!--
+      <div data-role="content" data-iscroll>
+        <div class="iscroll-pulldown">
+          <span class="iscroll-pull-icon"></span>
+          <span class="iscroll-pull-label"></span>
+        </div> 
+        <div class="content">
+        </div>
+      </div>-->
+    </div><!-- /page -->
+    
+    <div data-role="page" id="campaigns" >
+      <div data-role="header" data-position="fixed" data-position="fixed" data-theme="a" >
+        <a data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" >Back</a>
+        <h1>SimpleCrew</h1>
+        <a class="ui-btn-right" data-icon="gear" data-role="button" href="#menu">Menu</a>
+      </div><!-- /header -->
+      <div data-role="content" class="content">
+      </div>
+        <!--<div class="iscroll-pulldown">
+          <span class="iscroll-pull-icon"></span>
+          <span class="iscroll-pull-label"></span>
+        </div> 
+        <div class="content">
+        </div>
+      </div>-->
+    </div><!-- /page -->
+    
+    <div data-role="page" id="campaign" >
+      <div data-role="header" data-theme="a" >
+        <a data-rel="back" data-role="button" data-iconpos="left" data-icon="arrow-l" >Back</a>
+        <h1>SimpleCrew</h1>
+        <a class="ui-btn-right" data-icon="gear" data-role="button" href="#menu">Menu</a>
+      </div><!-- /header -->
+      <div data-role="content" class="content">
+      </div>
+      <!--<div data-role="content" data-iscroll>
+        <div class="iscroll-pulldown">
+          <span class="iscroll-pull-icon"></span>
+          <span class="iscroll-pull-label"></span>
+        </div> 
+        <div class="content">
+        </div>
+      </div>-->
+      
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="nav-glyphish" data-theme="c">
+        <div data-role="navbar" class="nav-glyphish">
+          <ul>
+            <li><a href="#" id="upload-photo" data-icon="custom" class="camera-icon">Upload Photo</a></li>
+            <li><a href="#map" data-icon="custom" id="map-link" class="map-icon">Map</a></li>
+          </ul>
+        </div><!-- /navbar -->
+      </div><!-- /footer -->
+      
+    </div><!-- /page -->
+    
+    <div data-role="page" id="make-comment" >
+      <div data-role="header" data-position="fixed" data-theme="a" >
+        <h1>SimpleCrew</h1>
+        <a class="ui-btn-right ui-disabled" data-transition="slide" data-direction="reverse" data-rel="back" data-role="button" id="submit_comment">Done</a>
+      </div><!-- /header -->
+      <div data-role="content" class='content'>
+      </div><!-- /content -->
+    </div><!-- /page -->
+    
+    <div data-role="page" id="menu" >
+      <div data-role="header" data-position="fixed" data-theme="a" >
+        <a data-rel="back" data-transition="slidedown" data-role="button" data-iconpos="left" data-icon="arrow-l" >Back</a>
+        <h1>Menu</h1>
+      </div><!-- /header -->
+      <div data-role="content" class='content'>
+        <a href="#home?logout=true" id="logout" data-role="button">Logout</a>
+      </div><!-- /content -->
+    </div><!-- /page -->
+    
+    <div data-role="page" id="map" >
+      <div data-role="header" data-position="fixed" data-theme="a" >
+        <a data-rel="back" data-role="button" data-iconpos="left" data-icon="arrow-l" >Back</a>
+        <h1>SimpleCrew</h1>
+        <a class="ui-btn-right" data-icon="gear" data-role="button" href="#menu">Menu</a>
+      </div><!-- /header -->
+      <div data-role="content" class='content'>
+        <div id="combo-map"></div>
+      </div><!-- /content -->
+    </div><!-- /page -->
+  </body>
+</html>

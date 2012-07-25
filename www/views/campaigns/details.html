@@ -1,0 +1,26 @@
+<ul data-role="listview" data-inset="true" data-theme="c" data-divider-theme="c">
+  <li data-role="list-divider">{{name}}
+    {{#start}}
+      <span class='campaign-duration'><br>{{start_local}}{{#end}} - {{end_local}}{{/end}}</span>
+    {{/start}}
+  </li>
+  <li class='campaign-description'>{{description}}</li>
+</ul>
+<form id="upload">
+  <input type="hidden" name="campaignId" id="campaignId" value="{{_id}}">
+  <input type="hidden" name="campaignId" id="companyId" value="{{_company}}">
+</form>
+{{#logs}}
+<ul id='log-list' data-role="listview" data-inset="true" data-theme="c" data-divider-theme="c">
+  <li data-role="list-divider">{{#_creator}}{{#name}}{{first}} {{last}}{{/name}}{{/_creator}} <span class="log-date"> - {{created_local}}</span></li>
+  <li>
+    <img class="lazy log-photo" src="images/white.gif"  data-original="{{#images}}{{mobile320}}{{/images}}"/>
+    <!--<img class="lazy log-photo" src="{{#images}}{{mobile320}}{{/images}}" />-->
+  </li>
+  {{#comments}}
+  <li>{{#_creator}}{{#name}}{{first}} {{last}}{{/name}}{{/_creator}}<span class="comment-text"> {{text}}</span>
+    <br><span class="comment-date">{{created_local}}</span>
+  <li>
+  {{/comments}}
+</ul>
+{{/logs}}
